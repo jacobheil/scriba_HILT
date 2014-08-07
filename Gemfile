@@ -45,3 +45,8 @@ gem 'mini_magick', '~> 3.7.0'
 
 gem 'devise', '~> 3.2.4'
 #  we’ll be using the devise gem to manage user authentication for us
+
+gem 'gravtastic', '~> 3.2.6'
+# A nice addition to showing user names is to use an avatar. For our application, we can use the service that Gravatar provides. This service matches user email addresses with an avatar picture of their choosing, with several default images for those who have not yet configured an image.
+# If you don’t already have a Gravatar account, head over and set one up.
+# We can use the gravtastic gem to make this quite easy. In your Gemfile add the following dependency (under devise).
