@@ -38,3 +38,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'carrierwave'
+
+gem 'mini_magick', '~> 3.7.0'
+# To create thumbnails of the images (and provide smaller assets for different views), we need to create different image files. CarrierWave doesn’t do this directly, but provides access to two systems that do, RMagick and MiniMagick. For CarrierWave, MiniMagick is recommended, so we’ll use that. This does require a system library named imagemagick which is a Linux-based interface for working with image files. First, let’s install imagemagick with homebrew.
+

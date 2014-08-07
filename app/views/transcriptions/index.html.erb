@@ -12,7 +12,21 @@
   </thead>
 
   <tbody>
+<!--     Awesome, now we have access to the additional features from CarriewWave to provide a thumbnail. We can use this in the transcriptions.index view to show a thumbnail next to the user_name.
+
+Open the app/views/transcriptions/index.html.erb. We can then update the view table to use the thumbnail. We’ll use the same picture_url method, but pass the :thumb symbol to retrieve the thumbnail version. -->
+    
     <% @transcriptions.each do |transcription| %>
+  <tr>
+    <td><%= transcription.user_name %></td>
+    <td><%= transcription.description %></td>
+    <td><%= image_tag transcription.picture_url(:thumb) if transcription.picture.present? %></td>
+    <td><%= link_to 'Show', transcription %></td>
+    <td><%= link_to 'Edit', edit_transcription_path(transcription) %></td>
+    <td><%= link_to 'Destroy', transcription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+<!--     <% @transcriptions.each do |transcription| %>
       <tr>
         <td><%= transcription.user_name %></td>
         <td><%= transcription.description %></td>
@@ -22,7 +36,7 @@
         <td><%= link_to 'Edit', edit_transcription_path(transcription) %></td>
         <td><%= link_to 'Destroy', transcription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <% end %> -->
   </tbody>
 </table>
 
